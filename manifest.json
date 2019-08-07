@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Grailed Transfer Extension",
+  "version": "0.1",
+  "icons": { "128": "icon.png" },
+  "description": "This extenstion will add a button to your Grailed item pages that will allow you to quickly and easily transfer the items to other selling platforms.",
+  "content_scripts": [
+    {
+      "matches": ["https://www.grailed.com/listings/*"],
+      "js": ["jquery-3.4.1.min.js", "content.js"]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
+}
