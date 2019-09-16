@@ -25,6 +25,7 @@ function setUp(){
     btn.innerHTML = "Sell item on Ebay";
     btn.setAttribute('class', 'button _large _border');
     btn.setAttribute('title', 'Ebay');
+    btn.setAttribute('onclick', "openInNewTab('https://www.ebay.com/sl/sell');");
     var parentBox = document.getElementById("listing-show-cta");
     var deleteButton = document.getElementById("user_delete");
     parentBox.insertBefore(btn, deleteButton);
@@ -61,21 +62,6 @@ function cacheItem(){
         "Images": images,
         "Price": price
     };
-    for(var key in dataDict) {
-        var value = dataDict[key];
-        console.log(key);
-        console.log(value);
-    }
 
     localStorage.setItem('myCat', 'Tom');
-    var newURL = "http://stackoverflow.com/";
-    chrome.tabs.create({ url: newURL });
-    if("https://signin.ebay.com/" in currentURL){
-        alert("You must be logged in to eBay.")
-    }
-    // chrome.storage.local.set({key: value}, function() {
-    //     console.log('Value is set to ' + value);
-    // });
-
-    // chrome.runtime.sendMessage({"message": "open_new_tab", "url": firstHref});
 }
